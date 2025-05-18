@@ -1,16 +1,16 @@
 # arize-phoenix-chatbot-eval
 A framework for chatbot testing and evaluation using Arize Phoenix. This project leverages Arize's observability tools to analyze chatbot performance, with integrated reference data stored in a local database for validation and comparison.
 
-Strategy for Chatbot Evaluation Workflow with Arize Phoenix
+<h1>Strategy for Chatbot Evaluation Workflow with Arize Phoenix</h1>
 
-Step 1: Prepare the Questions (Input Data)
+<h2>Step 1: Prepare the Questions (Input Data)</h2>
 Create or use a document (Questionnaire.docx) that contains all the questions you want to test.
 
 Alternatively, generate these questions programmatically using an LLM (Large Language Model) to automate question creation.
 
 These questions will serve as the input column in your dataset.
 
-Step 2: Obtain the Reference (Expected Answers)
+<h2>Step 2: Obtain the Reference (Expected Answers)</h2>
 Use a LangChain SQL Agent connected to your MySQL (or any) database.
 
 Pass the generated questions as input to this agent.
@@ -19,7 +19,7 @@ The SQL Agent queries the database and returns the expected answers.
 
 Store these pairs of (input, reference) (question, expected answer) in a dataframe called ref_df.
 
-Step 3: Obtain the Actual Chatbot Output
+<h2>Step 3: Obtain the Actual Chatbot Output</h2>
 Pass the same questions to your chatbot API via a custom LangChain chain decorated with @tracer.chain.
 
 The chatbot API returns the actual responses.
@@ -32,7 +32,7 @@ input is the question.
 
 output is the chatbot’s answer.
 
-Step 4: Merge the Reference and Actual Output Data
+<h2>Step 4: Merge the Reference and Actual Output Data</h2>
 Merge ref_df (with input and reference) and queries_df (with context.span_id, input, and output) on the input column.
 
 This results in a final dataframe merged_df with the following columns:
@@ -45,7 +45,7 @@ output — chatbot response
 
 reference — expected answer from the database (source of truth)
 
-Step 5: Pass the Merged Dataset to Arize Phoenix Evaluation
+<h2>Step 5: Pass the Merged Dataset to Arize Phoenix Evaluation</h2>
 Use merged_df as the dataset for Arize Phoenix evaluations.
 
 Run:
