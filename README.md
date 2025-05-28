@@ -55,4 +55,22 @@ Hallucination Detection — to identify when chatbot answers deviate or invent i
 
 The required columns context.span_id, input, output, reference enable Arize to provide meaningful insights.
 
+# MCP Evaluation Toolkit
+
+This project enables evaluation of chatbot responses using an MCP Inspector interface and Phoenix for detailed analysis.
+
+---
+
+## 🚀 Getting Started
+
+Follow the steps below to set up and run the project:
+
+### 1. Set Up Python
+
+Ensure Python is installed (preferably Python 3.8+). Set up a virtual environment and activate it:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
 
