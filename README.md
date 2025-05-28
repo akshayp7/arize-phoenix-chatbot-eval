@@ -69,7 +69,7 @@ This project enables evaluation of chatbot responses using an MCP Inspector inte
 
 ## 🚀 Getting Started
 
-### 1. Set Up Python
+Set Up Python
 
 Ensure Python is installed (preferably Python 3.8+). Set up a virtual environment and activate it:
 
