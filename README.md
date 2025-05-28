@@ -142,7 +142,7 @@ You will receive the results in JSON format directly within the MCP Inspector on
 ### 11. Open Phoenix Dashboard (View Traces)
 
 To visually explore traces, metrics, and logs related to your chatbot evaluation run, visit or refresh the Phoenix Dashboard in your browser:
-`http://localhost:60006`
+`http://localhost:6006`
 
 You should see traces corresponding to the tool execution.
 
