@@ -76,12 +76,14 @@ Ensure Python is installed (preferably Python 3.8+). Set up a virtual environmen
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+'''
 
 2. Install Dependencies
 Install required packages using:
 
 ```bash
 pip install -r requirements.txt
+'''
 
 3. Launch Phoenix Server
 Start the Phoenix server using:
