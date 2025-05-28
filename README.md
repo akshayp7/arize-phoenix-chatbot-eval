@@ -61,12 +61,6 @@ This project enables evaluation of chatbot responses using an MCP Inspector inte
 
 ---
 
-# MCP Evaluation Toolkit
-
-This project enables evaluation of chatbot responses using an MCP Inspector interface and Phoenix for detailed analysis.
-
----
-
 ## 🚀 Getting Started
 
 ### 1. Set Up Python Environment
