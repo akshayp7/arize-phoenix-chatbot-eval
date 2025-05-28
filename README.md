@@ -61,9 +61,13 @@ This project enables evaluation of chatbot responses using an MCP Inspector inte
 
 ---
 
-## 🚀 Getting Started
+# MCP Evaluation Toolkit
 
-Follow the steps below to set up and run the project:
+This project enables evaluation of chatbot responses using an MCP Inspector interface and Phoenix for detailed analysis.
+
+---
+
+## 🚀 Getting Started
 
 ### 1. Set Up Python
 
@@ -72,5 +76,58 @@ Ensure Python is installed (preferably Python 3.8+). Set up a virtual environmen
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+2. Install Dependencies
+Install required packages using:
+
+```bash
+pip install -r requirements.txt
+
+3. Launch Phoenix Server
+Start the Phoenix server using:
+
+```bash
+phoenix serve
+
+Phoenix UI will be available at: http://localhost:60006
+
+4. Start MCP Server
+Run MCP with the following command:
+
+```bash
+uv run mcp dev main_server.py
+
+5. Access MCP Inspector : Navigate to http://localhost:6274 on browser
+
+6. Connect to MCP
+Click the Connect button in MCP Inspector and wait for it to establish a connection.
+
+7. Navigate to Tools
+Go to the Tool section and click on List.
+
+8. Select Evaluation Tool
+Click on the evaluate_chatbot_responses tool displayed.
+
+9. Fill in Parameters
+Enter the following:
+
+Chatbot URL
+
+DOCX path with sample questions
+
+OpenAI credentials (API key, model, etc.)
+
+10. Run the Tool
+Click on Run Tool.
+You will receive the results in JSON format once the tool execution completes.
+
+11. Open Phoenix Dashboard
+Visit: http://localhost:60006
+
+To visually explore your chatbot evaluation metrics.
+
+12. Excel Output
+Check the results/ folder for evaluation results saved in Excel (.xlsx) format.
+
 
 
