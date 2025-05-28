@@ -69,67 +69,90 @@ This project enables evaluation of chatbot responses using an MCP Inspector inte
 
 ## 🚀 Getting Started
 
-Set Up Python
+### 1. Set Up Python Environment
 
-Ensure Python is installed (preferably Python 3.8+). Set up a virtual environment and activate it:
+Ensure Python is installed. Then, create and activate a virtual environment.
 
+**For macOS/Linux:**
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-'''
+source venv/bin/activate
+```
 
-2. Install Dependencies
-Install required packages using:
+**For Windows (Command Prompt/PowerShell):**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+*Note: Choose the command appropriate for your operating system.*
 
+### 2. Install Dependencies
+
+Install the required Python packages using the `requirements.txt` file:
 ```bash
 pip install -r requirements.txt
-'''
+```
 
-3. Launch Phoenix Server
-Start the Phoenix server using:
+### 3. Launch Phoenix Server
 
+Start the Phoenix server. This is used for tracing and visualizing application behavior.
 ```bash
 phoenix serve
+```
+Phoenix UI will be available at: `http://localhost:60006`
 
-Phoenix UI will be available at: http://localhost:60006
+Keep this terminal window open and running.
 
-4. Start MCP Server
-Run MCP with the following command:
+### 4. Start MCP Server
 
+In a **new terminal window/tab** (while the Phoenix server is still running in the other), run the MCP (My Custom Python) server with the following command:
 ```bash
 uv run mcp dev main_server.py
+```
+*Note: Ensure `main_server.py` is the correct entry point for your MCP application.*
 
-5. Access MCP Inspector : Navigate to http://localhost:6274 on browser
+### 5. Access MCP Inspector
 
-6. Connect to MCP
-Click the Connect button in MCP Inspector and wait for it to establish a connection.
+Open your web browser and navigate to the MCP Inspector:
+`http://localhost:6274`
 
-7. Navigate to Tools
-Go to the Tool section and click on List.
+### 6. Connect to MCP
 
-8. Select Evaluation Tool
-Click on the evaluate_chatbot_responses tool displayed.
+In the MCP Inspector interface, click the **Connect** button. Wait for it to establish a connection with the MCP server.
 
-9. Fill in Parameters
-Enter the following:
+### 7. Navigate to Tools
 
-Chatbot URL
+Once connected, go to the **Tool** section in the MCP Inspector sidebar and click on **List**.
 
-DOCX path with sample questions
+### 8. Select Evaluation Tool
 
-OpenAI credentials (API key, model, etc.)
+From the list of available tools, click on the `evaluate_chatbot_responses` tool.
 
-10. Run the Tool
-Click on Run Tool.
-You will receive the results in JSON format once the tool execution completes.
+### 9. Fill in Parameters
 
-11. Open Phoenix Dashboard
-Visit: http://localhost:60006
+Enter the following parameters in the tool's interface:
 
-To visually explore your chatbot evaluation metrics.
+*   **Chatbot URL**: The API endpoint of the chatbot you want to evaluate.
+*   **DOCX path with sample questions**: The file path to your `.docx` file containing the sample questions (e.g., `data/sample_questions.docx`).
+*   **OpenAI credentials**:
+    *   `api_key`: Your OpenAI API key.
+    *   `model`: The OpenAI model you wish to use (e.g., `gpt-3.5-turbo`, `gpt-4`).
+    *   *(Any other relevant OpenAI parameters)*
 
-12. Excel Output
-Check the results/ folder for evaluation results saved in Excel (.xlsx) format.
+### 10. Run the Tool
 
+After filling in all parameters, click the **Run Tool** button.
 
+You will receive the results in JSON format directly within the MCP Inspector once the tool execution completes.
+
+### 11. Open Phoenix Dashboard (View Traces)
+
+To visually explore traces, metrics, and logs related to your chatbot evaluation run, visit or refresh the Phoenix Dashboard in your browser:
+`http://localhost:60006`
+
+You should see traces corresponding to the tool execution.
+
+### 12. Excel Output
+
+Check the `results/` folder (or the configured output directory) in your project for the evaluation results saved in an Excel (`.xlsx`) format.
 
